@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { reactive, computed, watch } from 'vue'
+import { reactive, computed, watch, onBeforeMount, onMounted, onBeforeUnmount, onUnmounted } from 'vue'
 
 const appTitle = 'My Ok Counter App'
 
@@ -51,6 +51,20 @@ const increaseCounter = (amount, e) => {
 const decreaseCounter = amount => {
   counterData.count -= amount
 }
+
+onBeforeMount(() => {
+  console.log('onBeforeMount')
+})
+onMounted(() => {
+  console.log('onMounted')
+})
+onBeforeUnmount(() => {
+  console.log('onBeforeUnmount')
+})
+onUnmounted(() => {
+  console.log('onUnmounted')
+})
+
 </script>
 
 <!--
@@ -71,6 +85,12 @@ export default {
     count(newCount, oldCount) {
       if (newCount == 20) alert('asdfasd')
     }
+  },
+  mounted() {
+    console.log('mounted')
+  },
+  unmounted() {
+    console.log('unmounted')
   }
 }
 </script>
