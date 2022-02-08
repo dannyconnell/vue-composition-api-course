@@ -24,40 +24,53 @@
 </template>
 
 <script setup>
-import { reactive, computed, watch, onBeforeUpdate, onUpdated } from 'vue'
+/*
+  imports
+*/
 
-const appTitle = 'My Ok Counter App'
+  import { reactive, computed, watch, onMounted } from 'vue'
 
-const counterData = reactive({
-  count: 0,
-  title: 'My Counter'
-})
+/*
+  app title
+*/
 
-watch(() => counterData.count, (newCount) => {
-  if (newCount === 20) {
-    alert('Way to go! You made it to 20!!')
+  const appTitle = 'My Ok Counter App'
+
+  onMounted(() => {
+    console.log('Do stuff related to App Title')
+  })
+
+/*
+  counter
+*/
+
+  const counterData = reactive({
+    count: 0,
+    title: 'My Counter'
+  })
+
+  watch(() => counterData.count, (newCount) => {
+    if (newCount === 20) {
+      alert('Way to go! You made it to 20!!')
+    }
+  })
+
+  const oddOrEven = computed(() => {
+    if (counterData.count % 2 === 0) return 'even'
+    return 'odd'
+  })
+
+  const increaseCounter = (amount, e) => {
+    counterData.count += amount
   }
-})
 
-const oddOrEven = computed(() => {
-  if (counterData.count % 2 === 0) return 'even'
-  return 'odd'
-})
+  const decreaseCounter = amount => {
+    counterData.count -= amount
+  }
 
-const increaseCounter = (amount, e) => {
-  counterData.count += amount
-}
-
-const decreaseCounter = amount => {
-  counterData.count -= amount
-}
-
-onBeforeUpdate(() => {
-  console.log('onBeforeUpdate')
-})
-onUpdated(() => {
-  console.log('onUpdated')
-})
+  onMounted(() => {
+    console.log('Do stuff related to Counter')
+  })
 
 </script>
 
