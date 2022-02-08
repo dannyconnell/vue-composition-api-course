@@ -12,6 +12,15 @@
 
 <script>
 export default {
+  setup() {
+    
+  }
+}
+</script>
+
+<!--
+<script>
+export default {
   data() {
     return {
       counter: 0
@@ -27,6 +36,7 @@ export default {
   }
 }
 </script>
+-->
 
 <style>
 .home {
