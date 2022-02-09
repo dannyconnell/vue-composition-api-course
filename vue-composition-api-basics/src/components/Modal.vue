@@ -3,12 +3,21 @@
     <div
       class="modal"
     >
-      <h1>This is a modal</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ipsa laboriosam vero natus ut rerum quaerat, saepe praesentium tempore et hic velit odio nemo minus labore quam ullam quod architecto?</p>
+      <h1><slot name="title" /></h1>
+      <slot />
+      <pre>{{ $slots.title() }}</pre>
       <button>Hide modal</button>
     </div>
   </teleport>
 </template>
+
+<script setup>
+import { useSlots } from 'vue'
+
+const slots = useSlots()
+
+console.log(slots.title())
+</script>
 
 <style>
 .modal {
