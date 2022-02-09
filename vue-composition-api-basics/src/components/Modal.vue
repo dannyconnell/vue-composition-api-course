@@ -3,21 +3,39 @@
     <div
       class="modal"
     >
-      <h1><slot name="title" /></h1>
+      <h1>{{ title }}</h1>
       <slot />
-      <pre>{{ $slots.title() }}</pre>
       <button>Hide modal</button>
     </div>
   </teleport>
 </template>
 
 <script setup>
-import { useSlots } from 'vue'
+/*
+  props
+*/
 
-const slots = useSlots()
+  const props = defineProps({
+    title: {
+      type: String,
+      default: 'No title specified'
+    }
+  })
 
-console.log(slots.title())
 </script>
+
+<!-- 
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'No title specified'
+    }
+  }
+}
+</script>
+-->
 
 <style>
 .modal {
