@@ -29,6 +29,7 @@
 */
 
   import { reactive, computed, watch, onMounted } from 'vue'
+  import { vAutofocus } from '@/directives/vAutofocus'
 
 /*
   app title
@@ -71,16 +72,6 @@
   onMounted(() => {
     console.log('Do stuff related to Counter')
   })
-
-/*
-  directives
-*/
-
-  const vAutofocus = {
-    mounted: (el) => {
-      el.focus()
-    }
-  }
 
 </script>
 
