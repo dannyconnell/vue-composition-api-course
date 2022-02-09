@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>About</h1>
+  <div class="posts">
+    <h1>Posts</h1>
     <textarea v-autofocus />
   </div>
 </template>
