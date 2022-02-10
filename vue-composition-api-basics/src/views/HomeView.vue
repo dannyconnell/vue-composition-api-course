@@ -28,7 +28,8 @@
   imports
 */
 
-  import { ref, reactive, computed, watch, onMounted, nextTick } from 'vue'
+  import { ref, onMounted } from 'vue'
+  import { useCounter } from '@/use/useCounter'
   import { vAutofocus } from '@/directives/vAutofocus'
 
 /*
@@ -46,6 +47,8 @@
 /*
   counter
 */
+
+  const { counterData, oddOrEven, increaseCounter, decreaseCounter } = useCounter()
 
 
 
