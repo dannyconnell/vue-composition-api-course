@@ -13,3 +13,18 @@
     </footer>
   </div>
 </template>
+
+<script setup>
+
+/*
+  props
+*/
+
+  const props = defineProps({
+    note: {
+      type: Object,
+      required: true
+    }
+  })
+
+</script>
