@@ -3,6 +3,7 @@
 
     <AddEditNote
       v-model="newNote"
+      placeholder="Add a new note"
       ref="addEditNoteRef"
     >
       <template #buttons>
