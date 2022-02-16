@@ -49,6 +49,6 @@
 */
 
   const loveNoteballs = ref('')
-  useWatchCharacters(loveNoteballs)
+  useWatchCharacters(loveNoteballs, 50)
 
 </script>
