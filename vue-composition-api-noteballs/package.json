@@ -7,7 +7,7 @@
     "preview": "vite preview --port 5050"
   },
   "dependencies": {
-    "@vueuse/core": "^7.6.2",
+    "@vueuse/core": "^8.5.0",
     "bulma": "^0.9.3",
     "firebase": "^9.8.2",
     "pinia": "^2.0.11",
