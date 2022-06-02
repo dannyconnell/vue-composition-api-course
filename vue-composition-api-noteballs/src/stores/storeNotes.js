@@ -32,8 +32,7 @@ export const useStoreNotes = defineStore('storeNotes', {
     init() {
       const storeAuth = useStoreAuth()
 
-      // notesCollectionRef = collection(db, 'users', storeAuth.user.id, 'notes')
-      notesCollectionRef = collection(db, 'users', '4CFYjeRY8NRxcfRYP3Vvv0KGyzx1', 'notes')
+      notesCollectionRef = collection(db, 'users', storeAuth.user.id, 'notes')
       notesCollectionQuery = query(notesCollectionRef, orderBy('date', 'desc'))
       this.getNotes()
     },
@@ -54,6 +53,8 @@ export const useStoreNotes = defineStore('storeNotes', {
         })
         this.notes = notes
         this.notesLoaded = true
+      }, error => {
+        console.log('error.message: ', error.message)
       })
     },
     clearNotes() {
